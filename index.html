@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>臼井丸 釣果帖</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="千葉外房・大原港の釣り船「臼井丸」の釣果を、魚種・月・午前午後で探せる釣果帖。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="cover">
+    <h1 class="cover-title">臼井丸<small>釣果帖</small></h1>
+    <div class="cover-body">
+      <div class="cover-meta">
+        <span>千葉県 外房 大原港</span>
+        <span id="period">釣果の記録</span>
+        <span><a href="https://ameblo.jp/usuimaru-tatsu/" target="_blank" rel="noopener">船長のブログ</a></span>
+      </div>
+      <p class="cover-lead">船長が毎日書いている釣果ブログを、魚の種類・月・午前午後で探せる帳面にまとめました。いつ、何が、どれくらい釣れたかを一覧できます。</p>
+      <div class="notice-box" id="latest"></div>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="h-season">
+    <div class="section-head"><h2 id="h-season">釣れどき帖</h2><p>釣り物ごとの月別のようす</p></div>
+    <div class="season" id="season"></div>
+  </section>
+
+  <section class="section" id="kiroku" aria-labelledby="h-log">
+    <div class="section-head"><h2 id="h-log">釣果の記録</h2><p>新しい順。「写真をみる」で写真を広げられます。全部の写真は元の記事で</p></div>
+    <div class="filters" role="group" aria-label="絞り込み">
+      <div class="filter-row"><span class="k">釣り物</span><span id="f-plan" class="filter-row"></span></div>
+      <div class="filter-row"><span class="k">月</span><span id="f-month" class="filter-row"></span><span class="k" style="min-width:auto;margin-left:8px">便</span><span id="f-slot" class="filter-row"></span></div>
+      <div class="filter-row">
+        <label class="k" for="f-fish" style="min-width:auto">魚</label><select id="f-fish"></select>
+        <label class="toggle" for="f-notice"><input type="checkbox" id="f-notice"> 出船案内・欠航のお知らせも表示</label>
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="log" id="log"><p class="empty">読み込み中…</p></div>
+  </section>
+
+  <section class="section" aria-labelledby="h-index">
+    <div class="section-head"><h2 id="h-index">魚の索引</h2><p>釣果に名前が出た魚と、その回数。押すとその魚の記録だけを表示します</p></div>
+    <div class="index" id="index"></div>
+  </section>
+
+  <footer class="colophon">
+    <span>写真・文：臼井丸 船長ブログより（掲載許可済み）</span>
+    <span>データ更新：<span id="updated"></span></span>
+    <span>釣り物に「推定」とあるものは、出船案内が無いため内容から判断しています</span>
+  </footer>
+
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* 和モダン・魚拓帖：生成りの紙に墨、朱の落款。左に縦書きの表題、右に帳面のように釣果が並ぶ */
+:root {
+  --washi: #F2ECDF;      /* 生成りの紙 */
+  --washi-2: #E8E0CF;    /* 紙の影・罫 */
+  --sumi: #1E1A16;       /* 墨 */
+  --sumi-2: #5B5145;     /* 薄墨 */
+  --sumi-3: #8A7E6C;     /* 淡墨 */
+  --shu: #B2382B;        /* 朱 */
+  --shu-bg: #F3DDD5;
+  --ai: #2E4A5E;         /* 藍（午前の印） */
+  --kaki: #9A5A1E;       /* 柿渋（午後の印） */
+  --photo: #D8CDB8;
+  --font-display: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --washi: #1B1815; --washi-2: #2A2520; --sumi: #EDE5D5; --sumi-2: #B9AD99; --sumi-3: #8C826F;
+    --shu: #E0614F; --shu-bg: #3A211C; --ai: #93B3C8; --kaki: #D9A066; --photo: #322C25;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --washi: #1B1815; --washi-2: #2A2520; --sumi: #EDE5D5; --sumi-2: #B9AD99; --sumi-3: #8C826F;
+  --shu: #E0614F; --shu-bg: #3A211C; --ai: #93B3C8; --kaki: #D9A066; --photo: #322C25;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--washi);
+  color: var(--sumi);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1040px; margin: 0 auto; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- 表紙 ---------- */
+.cover {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 28px;
+  padding-block: 40px 28px;
+  border-bottom: 1px solid var(--sumi);
+}
+.cover-title {
+  writing-mode: vertical-rl;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 7vw, 64px);
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+  margin: 0;
+  padding-left: 18px;
+  border-left: 1px solid var(--sumi);
+  display: flex;
+  gap: 0.3em;
+}
+.cover-title small { font-size: 0.42em; letter-spacing: 0.3em; color: var(--sumi-2); font-weight: 500; }
+.cover-body { min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.cover-meta { font-family: var(--font-display); font-size: 15px; color: var(--sumi-2); display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.cover-lead { font-size: 15px; max-width: 34em; margin: 0; }
+.seal {
+  display: inline-grid; place-items: center;
+  width: 54px; height: 54px;
+  border: 2px solid var(--shu); color: var(--shu);
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 15px; line-height: 1.15; text-align: center;
+  transform: rotate(-4deg);
+}
+.notice-box {
+  border: 1px solid var(--shu);
+  background: var(--shu-bg);
+  padding: 12px 16px;
+  display: grid; grid-template-columns: auto minmax(0,1fr); gap: 4px 14px; align-items: start;
+}
+.notice-box .label { font-family: var(--font-display); color: var(--shu); font-weight: 700; writing-mode: vertical-rl; letter-spacing: 0.2em; grid-row: span 2; }
+.notice-box p { margin: 0; }
+.notice-box .when { font-size: 13px; color: var(--sumi-2); }
+
+/* ---------- 見出し ---------- */
+.section { padding-block: 32px 8px; }
+.section-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.section-head h2 { font-family: var(--font-display); font-size: 26px; margin: 0; letter-spacing: 0.08em; text-wrap: balance; }
+.section-head p { margin: 0; color: var(--sumi-2); font-size: 13px; }
+
+/* ---------- 釣れどき帖 ---------- */
+.season { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid var(--sumi); }
+.season-col { padding: 16px 18px 18px; border-bottom: 1px solid var(--washi-2); min-width: 0; }
+.season-col + .season-col { border-left: 1px solid var(--washi-2); }
+.season-col h3 { font-family: var(--font-display); font-size: 20px; margin: 0; display: flex; align-items: baseline; gap: 8px; }
+.season-col h3 rt { font-size: 10px; color: var(--sumi-3); font-family: var(--font-body); }
+.season-col .facts { font-size: 13px; color: var(--sumi-2); margin: 4px 0 10px; }
+.season-col .facts b { color: var(--sumi); font-weight: 700; font-family: var(--font-display); font-size: 16px; }
+.bars svg { width: 100%; height: auto; overflow: visible; }
+.bars text { font-family: var(--font-body); font-size: 11px; fill: var(--sumi-2); }
+.bars .val { fill: var(--sumi); font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+.bars .bar { fill: var(--sumi); }
+.bars .bar.top { fill: var(--shu); }
+.bars .base { stroke: var(--sumi-3); stroke-width: 1; }
+.season-note { font-size: 12px; color: var(--sumi-3); margin: 8px 0 0; }
+
+/* ---------- 絞り込み ---------- */
+.filters {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--washi);
+  border-top: 1px solid var(--sumi); border-bottom: 1px solid var(--washi-2);
+  padding-block: 10px;
+  display: grid; gap: 8px;
+}
+.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.filter-row .k { font-family: var(--font-display); font-size: 13px; color: var(--sumi-2); min-width: 3.5em; }
+.chip {
+  font: inherit; font-size: 13px;
+  background: transparent; color: var(--sumi);
+  border: 1px solid var(--washi-2); border-radius: 2px;
+  padding: 2px 10px; cursor: pointer; line-height: 1.7;
+}
+.chip:hover { border-color: var(--sumi-3); }
+.chip[aria-pressed="true"] { background: var(--sumi); color: var(--washi); border-color: var(--sumi); }
+.chip:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--shu); outline-offset: 2px; }
+select { font: inherit; font-size: 13px; background: var(--washi); color: var(--sumi); border: 1px solid var(--washi-2); border-radius: 2px; padding: 2px 6px; }
+.toggle { font-size: 13px; display: inline-flex; align-items: center; gap: 6px; color: var(--sumi-2); }
+.count { font-size: 13px; color: var(--sumi-2); margin-left: auto; }
+.count b { color: var(--sumi); font-family: var(--font-display); font-size: 16px; }
+
+/* ---------- 釣果帖（一覧） ---------- */
+.log { display: flex; flex-direction: column; }
+.entry {
+  display: grid;
+  grid-template-columns: 4.2em minmax(0, 300px) minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--washi-2);
+}
+.date {
+  writing-mode: vertical-rl;
+  font-family: var(--font-display);
+  font-size: 19px; letter-spacing: 0.12em; line-height: 1.3;
+  justify-self: center;
+  display: flex; gap: 0.4em;
+}
+.date small { font-size: 12px; color: var(--sumi-2); letter-spacing: 0.2em; }
+.photo { position: relative; aspect-ratio: 4 / 3; max-width: 100%; background: var(--photo); overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); color: var(--sumi-2); font-size: 14px; letter-spacing: 0.3em; }
+.photo .n { position: absolute; right: 6px; bottom: 6px; background: var(--washi); color: var(--sumi); font-size: 11px; padding: 0 6px; }
+.body { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; }
+.slot { padding: 0 6px; border: 1px solid currentColor; }
+.slot.am { color: var(--ai); }
+.slot.pm { color: var(--kaki); }
+.plan { font-family: var(--font-display); font-size: 14px; }
+.est { color: var(--sumi-3); font-size: 11px; }
+.entry h3 { font-family: var(--font-display); font-size: 23px; line-height: 1.4; margin: 0; text-wrap: balance; }
+.catch { margin: 2px 0 0; padding: 0; list-style: none; font-family: var(--font-display); font-size: 16px; }
+.catch li { display: flex; flex-wrap: wrap; gap: 0 14px; border-bottom: 1px dotted var(--washi-2); padding-block: 2px; }
+.catch .f { min-width: 4.5em; font-weight: 700; }
+.others { font-size: 13px; color: var(--sumi-2); margin: 0; }
+.others span::after { content: "・"; color: var(--sumi-3); }
+.others span:last-child::after { content: ""; }
+.note { margin: 0; font-size: 14px; }
+.seals { display: flex; gap: 10px; margin-top: 4px; }
+.seals .seal { width: 44px; height: 44px; font-size: 13px; }
+.seals .seal:nth-child(2) { transform: rotate(3deg); }
+.actions { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; margin-top: 4px; align-items: center; }
+.actions a { color: var(--sumi-2); text-underline-offset: 3px; }
+details.gallery summary { cursor: pointer; color: var(--sumi-2); list-style: none; text-decoration: underline; text-underline-offset: 3px; }
+details.gallery summary::-webkit-details-marker { display: none; }
+details.gallery[open] summary { color: var(--sumi); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; margin-top: 10px; }
+.gallery-grid .photo { aspect-ratio: 3 / 4; }
+
+/* お知らせ（小さめの行） */
+.entry.notice { grid-template-columns: 4.2em minmax(0, 1fr); padding-block: 14px; }
+.entry.notice .date { font-size: 15px; }
+.entry.notice h3 { font-size: 17px; }
+.entry.notice .note { color: var(--sumi-2); font-size: 13px; }
+.kesson { color: var(--sumi-3); border: 1px solid var(--sumi-3); padding: 0 6px; font-family: var(--font-display); }
+.entry.event h3 { color: var(--shu); }
+
+.empty { padding: 40px 0; text-align: center; font-family: var(--font-display); color: var(--sumi-2); }
+
+/* ---------- 魚の索引 ---------- */
+.index { display: flex; flex-wrap: wrap; gap: 6px 4px; font-family: var(--font-display); }
+.index button { font: inherit; font-size: 15px; background: none; border: none; color: var(--sumi); cursor: pointer; padding: 2px 6px; }
+.index button:hover { color: var(--shu); }
+.index button sup { font-family: var(--font-body); font-size: 10px; color: var(--sumi-3); margin-left: 2px; }
+
+/* ---------- 奥付 ---------- */
+.colophon { margin-top: 40px; border-top: 1px solid var(--sumi); padding-block: 18px 40px; font-size: 12px; color: var(--sumi-2); display: flex; flex-wrap: wrap; gap: 6px 24px; }
+
+@media (max-width: 720px) {
+  .cover { gap: 16px; padding-block: 24px 20px; }
+  .entry { grid-template-columns: 2.6em minmax(0, 1fr); gap: 12px 14px; }
+  .entry .photo-wrap { grid-column: 2; }
+  .entry .body { grid-column: 2; }
+  .date { font-size: 16px; grid-row: span 2; align-self: start; }
+  .entry.notice { grid-template-columns: 2.6em minmax(0, 1fr); }
+  .season-col + .season-col { border-left: none; }
+  .count { margin-left: 0; width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .entry { animation: rise .4s ease-out both; }
+  @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+}
