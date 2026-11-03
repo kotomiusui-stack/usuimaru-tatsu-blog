@@ -1,4 +1,5 @@
 // 臼井丸 釣果帖：data/posts.json を読み込んで一覧・絞り込み・釣れどき帖を描く
+// 臼井丸 釣果帖：data/posts.json を読み込んで一覧・絞り込み・釣れどき帖を描く
 (function () {
   "use strict";
   const KANJI = "〇一二三四五六七八九";
@@ -129,52 +130,93 @@
       .map(([f, n]) => `<button type="button" data-fish="${esc(f)}">${esc(f)}<sup class="num">${n}</sup></button>`).join("");
   }
 
-  // 月ごとの棒（墨の短冊）。最大の月だけ朱で示す
-  function bars(rows, unit) {
-    const W = 220, H = 92, base = 70, top = 18, bw = 34;
-    const max = Math.max(...rows.map((r) => r.v ?? 0), 1);
-    const step = W / rows.length;
+  // 絵グラフ：釣れた数だけ魚の絵を積む（1つ＝unit）。いちばん多い月の数字は朱で
+  function bars(rows, unit, kind) {
+    const sym = { tai: "f-tai", hirame: "f-hirame", kasago: "f-kasago" }[kind] || "f-tai";
+    const max = Math.max(...rows.map((r) => r.v ?? 0), 0);
+    const per = max > 24 ? Math.ceil(max / 20) : 1;          // 多すぎる時は1つの絵で何枚分かにまとめる
+    const units = max / per;
+    const perRow = units <= 4 ? 1 : units <= 12 ? 3 : 4;
+    const w = perRow === 1 ? "72%" : `${100 / perRow}%`;
     const best = rows.reduce((a, r) => ((r.v ?? -1) > (a.v ?? -1) ? r : a), rows[0]);
-    const g = rows.map((r, i) => {
-      const x = i * step + (step - bw) / 2;
-      const h = r.v ? ((base - top) * r.v) / max : 0;
-      return `${r.v ? `<rect class="bar${r === best ? " top" : ""}" x="${x}" y="${base - h}" width="${bw}" height="${h}"></rect>
-        <text class="val" x="${x + bw / 2}" y="${base - h - 5}" text-anchor="middle">${r.v}${unit}</text>` : `<text x="${x + bw / 2}" y="${base - 5}" text-anchor="middle">記録なし</text>`}
-        <text x="${x + bw / 2}" y="${base + 16}" text-anchor="middle">${kn(r.m)}月</text>`;
+    const one = (f) => `<span class="ico${f < 1 ? " part" : ""}"${f < 1 ? ` style="--f:${f.toFixed(2)}"` : ""}><svg viewBox="0 0 100 50" aria-hidden="true"><use href="#${sym}"></use></svg></span>`;
+    const cols = rows.map((r) => {
+      if (!r.v) return `<div class="pm"><span class="nodata">記録なし</span></div>`;
+      const n = r.v / per, whole = Math.floor(n), frac = n - whole;
+      const icons = Array.from({ length: whole }, () => one(1)).join("") + (frac >= 0.1 ? one(frac) : "");
+      return `<div class="pm${r === best && rows.filter((q) => q.v === r.v).length === 1 ? " top" : ""}">
+        <span class="val num">${r.v}<small>${unit}</small></span><div class="pile">${icons}</div></div>`;
     }).join("");
-    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="月別の推移">${g}<line class="base" x1="0" x2="${W}" y1="${base}" y2="${base}"></line></svg>`;
+    const label = rows.map((r) => `${kn(r.m)}月 ${r.v ? r.v + unit : "記録なし"}`).join("、");
+    const key = per === 1 ? `絵1つ＝1${unit}` : `絵1つ＝${per}${unit}`;
+    return `<div class="picto" style="--n:${rows.length};--w:${w}" role="img" aria-label="月別の推移：${label}">${cols}
+      <div class="mons">${rows.map((r) => `<span>${kn(r.m)}月</span>`).join("")}</div></div>
+      <span hidden class="key">${key}</span>`;
   }
 
   function renderSeason() {
-    const months = [...new Set(DATA.posts.map((p) => Number(p.date.slice(5, 7))))].sort((a, b) => a - b);
+    // 基準日＝データの最終日。グラフは基準日を含む直近3か月、数字とランキングは直近30日
+    const lastPost = DATA.posts.reduce((a, p) => (p.date > a ? p.date : a), "");
+    const baseStr = (DATA.period && DATA.period[1]) || DATA.updated || lastPost;
+    const base = new Date(baseStr + "T00:00:00");
+    const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const from30 = ymd(new Date(base.getFullYear(), base.getMonth(), base.getDate() - 29));
+    const in30 = (p) => p.date >= from30 && p.date <= baseStr;
+    const md = (str) => `${Number(str.slice(5, 7))}/${Number(str.slice(8, 10))}`;
+    const span30 = `直近30日（${md(from30)}〜${md(baseStr)}）`;
+    const months = [2, 1, 0].map((k) => {
+      const d = new Date(base.getFullYear(), base.getMonth() - k, 1);
+      return { key: ymd(d).slice(0, 7), m: d.getMonth() + 1 };
+    });
+    const lastDay = new Date(base.getFullYear(), base.getMonth() + 1, 0).getDate();
+    const partial = base.getDate() < lastDay ? base.getDate() : 0;   // 今月が途中なら「◯日まで」
+    const monthNote = partial ? `${kn(months[2].m)}月は${partial}日まで。` : "";
+    const ymOf = (p) => p.date.slice(0, 7);
     const trips = DATA.posts.filter((p) => p.kind === "catch");
-    const col = (title, ruby, group, fish, mode) => {
+
+    const col = (title, ruby, group, fish, mode, kind) => {
       const ps = trips.filter((p) => group.match(p.plan));
-      const cs = ps.flatMap((p) => p.catches.filter((c) => c.fish === fish).map((c) => ({ ...c, m: Number(p.date.slice(5, 7)) })));
-      const rows = months.map((m) => {
-        const mc = cs.filter((c) => c.m === m);
+      const cs = ps.flatMap((p) => p.catches.filter((c) => c.fish === fish).map((c) => ({ ...c, ym: ymOf(p), recent: in30(p) })));
+      const rows = months.map(({ key, m }) => {
+        const mc = cs.filter((c) => c.ym === key);
         const v = mode === "kg" ? Math.max(0, ...mc.map((c) => c.maxKg ?? 0)) : Math.max(0, ...mc.map((c) => c.max ?? 0));
         return { m, v: v ? (mode === "kg" ? Math.round(v * 10) / 10 : v) : 0 };
       });
-      const maxKg = Math.max(0, ...cs.map((c) => c.maxKg ?? 0));
-      const maxN = Math.max(0, ...cs.map((c) => c.max ?? 0));
+      const rc = cs.filter((c) => c.recent);
+      const n30 = ps.filter(in30).length;
+      const maxKg = Math.max(0, ...rc.map((c) => c.maxKg ?? 0));
+      const maxN = Math.max(0, ...rc.map((c) => c.max ?? 0));
       return `<div class="season-col"><h3><ruby>${title}<rt>${ruby}</rt></ruby></h3>
-        <p class="facts">出船記録 <b class="num">${ps.length}</b> 回　トップ <b class="num">${maxN || "—"}</b>${maxN ? "枚" : ""}　最大 <b class="num">${maxKg ? fmtKg(maxKg) : "—"}</b>${maxKg ? "kg" : ""}</p>
-        <div class="bars">${bars(rows, mode === "kg" ? "kg" : "枚")}</div>
-        <p class="season-note">${mode === "kg" ? "月ごとの最大重量" : "月ごとのトップ枚数"}</p></div>`;
+        <p class="facts"><span class="span30">${span30}</span><br>出船記録 <b class="num">${n30}</b> 回　トップ <b class="num">${maxN || "—"}</b>${maxN ? "枚" : ""}　最大 <b class="num">${maxKg ? fmtKg(maxKg) : "—"}</b>${maxKg ? "kg" : ""}</p>
+        <div class="bars">${bars(rows, mode === "kg" ? "kg" : "枚", kind)}</div>
+        <p class="season-note">${mode === "kg" ? "直近3か月の月ごとの最大重量（絵1つ＝1kg）" : "直近3か月の月ごとのトップ枚数（絵1つ＝1枚）"}${monthNote}</p></div>`;
     };
+
     const neg = trips.filter((p) => p.plan === "根魚五目");
+    const neg30 = neg.filter(in30);
+    // 直近30日の出船が3回未満なら、ランキングは直近3か月で集計する
+    const rankBase = neg30.length >= 3 ? neg30 : neg.filter((p) => months.some((x) => x.key === ymOf(p)));
+    const rankSpan = neg30.length >= 3 ? span30 : `直近3か月（直近30日は出船${neg30.length}回のため）`;
     const nf = new Map();
-    neg.forEach((p) => fishOf(p).forEach((f) => nf.set(f, (nf.get(f) || 0) + 1)));
-    const topN = [...nf.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
-    const negRows = months.map((m) => ({ m, v: neg.filter((p) => Number(p.date.slice(5, 7)) === m).length }));
+    rankBase.forEach((p) => fishOf(p).forEach((f) => nf.set(f, (nf.get(f) || 0) + 1)));
+    const rank = [...nf.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ja")).slice(0, 8);
+    let prev = null, pos = 0;   // 同数は同じ順位にする
+    const ranked = rank.map(([f, n], i) => { if (n !== prev) { pos = i + 1; prev = n; } return { f, n, pos }; });
+    const negRows = months.map(({ key, m }) => ({ m, v: neg.filter((p) => ymOf(p) === key).length }));
+    const rankHTML = ranked.map(({ f, n, pos }) => `<li class="${pos === 1 ? "first" : ""}">
+          <span class="rk num">${pos}</span><span class="nm">${esc(f)}</span>
+          <span class="meter" aria-hidden="true"><i style="width:${(100 * n) / Math.max(rankBase.length, 1)}%"></i></span>
+          <span class="ct num">${n}<small>回</small></span></li>`).join("");
     document.getElementById("season").innerHTML =
-      col("真鯛", "マダイ", PLAN_GROUPS[0], "マダイ", "count") +
-      col("平目", "ヒラメ", PLAN_GROUPS[1], "ヒラメ", "kg") +
+      col("真鯛", "マダイ", PLAN_GROUPS[0], "マダイ", "count", "tai") +
+      col("平目", "ヒラメ", PLAN_GROUPS[1], "ヒラメ", "kg", "hirame") +
       `<div class="season-col"><h3><ruby>根魚五目<rt>ねざかなごもく</rt></ruby></h3>
-        <p class="facts">よく釣れた魚　${topN.map(([f, n]) => `<b>${esc(f)}</b><span class="num">${n}</span>`).join("　")}</p>
-        <div class="bars">${bars(negRows, "回")}</div>
-        <p class="season-note">月ごとの出船記録の数（10月からは午前がヒラメ船に）</p></div>`;
+        <p class="facts"><span class="span30">${span30}</span><br>出船記録 <b class="num">${neg30.length}</b> 回</p>
+        <div class="bars">${bars(negRows, "回", "kasago")}</div>
+        <p class="season-note">直近3か月の月ごとの出船記録の数（絵1つ＝1回。10月からは午前がヒラメ船に）${monthNote}</p>
+        <p class="facts" style="margin-top:18px">よく釣れた魚のランキング<br><span class="span30">${rankSpan}</span></p>
+        <ol class="ranking">${rankHTML}</ol>
+        <p class="season-note">釣果に名前が出た出船の回数（全${rankBase.length}回のうち）</p></div>`;
   }
 
   function renderCover() {

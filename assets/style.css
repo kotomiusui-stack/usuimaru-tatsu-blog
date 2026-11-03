@@ -100,12 +100,51 @@ img { max-width: 100%; display: block; }
 .season-col h3 rt { font-size: 10px; color: var(--sumi-3); font-family: var(--font-body); }
 .season-col .facts { font-size: 13px; color: var(--sumi-2); margin: 4px 0 10px; }
 .season-col .facts b { color: var(--sumi); font-weight: 700; font-family: var(--font-display); font-size: 16px; }
-.bars svg { width: 100%; height: auto; overflow: visible; }
-.bars text { font-family: var(--font-body); font-size: 11px; fill: var(--sumi-2); }
-.bars .val { fill: var(--sumi); font-family: var(--font-display); font-size: 13px; font-weight: 700; }
-.bars .bar { fill: var(--sumi); }
-.bars .bar.top { fill: var(--shu); }
-.bars .base { stroke: var(--sumi-3); stroke-width: 1; }
+.picto { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 0 6px; }
+.picto .pm { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 0; padding-top: 4px; }
+.picto .val { font-family: var(--font-display); font-weight: 700; font-size: 18px; line-height: 1.3; color: var(--sumi); }
+.picto .val small { font-size: 12px; }
+.picto .pm.top .val { color: var(--shu); }
+.picto .nodata { font-size: 13px; color: var(--sumi-3); padding-bottom: 6px; }
+.picto .pile { display: flex; flex-wrap: wrap; justify-content: center; align-content: flex-end; width: 100%; padding-bottom: 6px; }
+.picto .ico { flex: 0 0 var(--w); width: var(--w); aspect-ratio: 2 / 1; padding: 1px; overflow: hidden; display: block; }
+.picto .ico svg { width: 100%; height: 100%; display: block; }
+.picto .ico.part svg { width: calc(100% / var(--f)); }
+.picto .ico.part { flex-basis: calc(var(--w) * var(--f)); width: calc(var(--w) * var(--f)); aspect-ratio: auto; height: 0; padding-bottom: calc(var(--w) * 0.5 * 1); margin-right: calc(var(--w) * (1 - var(--f))); position: relative; }
+.picto .ico.part svg { position: absolute; left: 0; top: 0; height: auto; aspect-ratio: 2 / 1; }
+.picto .mons { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; border-top: 1px solid var(--sumi-3); }
+.picto .mons span { text-align: center; font-family: var(--font-display); font-size: 14px; color: var(--sumi-2); padding-top: 4px; }
+.ranking { list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid var(--sumi-3); }
+.ranking li { display: grid; grid-template-columns: 1.6em 7.2em minmax(0, 1fr) 3.2em; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px dotted var(--washi-2); }
+.ranking .rk { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--sumi-2); text-align: center; }
+.ranking .nm { font-family: var(--font-display); font-weight: 700; font-size: 15px; white-space: nowrap; }
+.ranking .meter { height: 6px; background: var(--washi-2); display: block; }
+.ranking .meter i { display: block; height: 100%; background: var(--sumi); }
+.ranking .ct { text-align: right; font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+.ranking .ct small { font-size: 11px; font-weight: 500; color: var(--sumi-2); }
+.ranking li.first .rk, .ranking li.first .nm, .ranking li.first .ct { color: var(--shu); }
+.ranking li.first .meter i { background: var(--shu); }
+.ranking li.first .nm { font-size: 18px; }
+.span30 { font-size: 12px; color: var(--sumi-3); }
+.howto { border: 1px solid var(--washi-2); margin: -6px 0 18px; background: color-mix(in srgb, var(--washi) 70%, #fff 30%); }
+.howto summary { cursor: pointer; padding: 8px 14px; font-family: var(--font-display); font-weight: 700; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 8px; }
+.howto summary::-webkit-details-marker { display: none; }
+.howto summary::before { content: "＋"; color: var(--shu); font-family: var(--font-body); }
+.howto[open] summary::before { content: "－"; }
+.howto-body { padding: 0 16px 14px; font-size: 14px; }
+.howto-lead { margin: 0 0 8px; }
+.howto dl { margin: 0; display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 10px 14px; }
+.howto dt { font-family: var(--font-display); font-weight: 700; color: var(--sumi); border-left: 3px solid var(--shu); padding-left: 8px; line-height: 1.6; }
+.howto dd { margin: 0; }
+.howto .sub { font-size: 12.5px; color: var(--sumi-2); }
+.howto .shu { color: var(--shu); font-weight: 700; }
+.howto .keys { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.howto .keys li { display: flex; align-items: center; gap: 6px; }
+.howto .mini { width: 40px; height: 20px; flex: none; }
+.howto > .howto-body > p.sub { margin: 12px 0 0; }
+@media (max-width: 560px) { .howto dl { grid-template-columns: minmax(0, 1fr); gap: 4px; } .howto dd { margin-bottom: 8px; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .howto { background: var(--washi-2); } }
+:root[data-theme="dark"] .howto { background: var(--washi-2); }
 .season-note { font-size: 12px; color: var(--sumi-3); margin: 8px 0 0; }
 
 /* ---------- 絞り込み ---------- */

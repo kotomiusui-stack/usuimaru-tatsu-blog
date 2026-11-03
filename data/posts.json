@@ -4,10 +4,54 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-10-31"
+  "2026-11-02"
  ],
- "updated": "2026-11-01",
+ "updated": "2026-11-03",
  "posts": [
+  {
+   "id": "12983371734",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983371734.html",
+   "date": "2026-11-02",
+   "time": "12:05",
+   "title": "不発",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ヒラメ",
+   "planEstimated": false,
+   "catches": [],
+   "others": [
+    "タチウオ"
+   ],
+   "note": "アタリもなく不発。。😵😵 なぜかタチウオのアタリが一番ありました。。💦 明日は沖釣りフェスタで出船します。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261102/12/usuimaru-tatsu/a7/6b/j/o0810108015837639450.jpg",
+    "https://stat.ameba.jp/user_images/20261102/12/usuimaru-tatsu/7a/91/j/o0810108015837639455.jpg"
+   ],
+   "imageCount": 2,
+   "cancelled": false
+  },
+  {
+   "id": "12983314338",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983314338.html",
+   "date": "2026-11-01",
+   "time": "13:51",
+   "title": "沖釣りフェスタ　day1",
+   "kind": "event",
+   "slot": null,
+   "plan": "ヒラメ",
+   "planEstimated": false,
+   "catches": [],
+   "others": [],
+   "note": "今日はいすみ市 沖釣りフェスタでした✨ご参加ありがとうございました！🙇🏻‍♂️ 明日は通常出船でヒラメに。明後日3日も沖釣りフェスタで出船です。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261101/20/usuimaru-tatsu/46/eb/j/o0810108015837445938.jpg",
+    "https://stat.ameba.jp/user_images/20261101/20/usuimaru-tatsu/8b/62/j/o0810108015837445941.jpg",
+    "https://stat.ameba.jp/user_images/20261101/20/usuimaru-tatsu/51/cb/j/o0810108015837445946.jpg",
+    "https://stat.ameba.jp/user_images/20261101/20/usuimaru-tatsu/4b/8d/j/o0810108015837445949.jpg"
+   ],
+   "imageCount": 19,
+   "cancelled": false
+  },
   {
    "id": "12983204930",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983204930.html",
