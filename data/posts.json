@@ -4,10 +4,64 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-02"
+  "2026-11-05"
  ],
- "updated": "2026-11-03",
+ "updated": "2026-11-05",
  "posts": [
+  {
+   "id": "12983646323",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983646323.html",
+   "date": "2026-11-05",
+   "time": "10:26",
+   "title": "明日までお休みです",
+   "kind": "notice",
+   "slot": null,
+   "plan": null,
+   "planEstimated": false,
+   "catches": [],
+   "others": [],
+   "note": "明日6日まで大原お休みです⚠️ 海は時化に。。🌊☔ 7日㈯から出船予定です！午前ヒラメ午後マダイでご予約お待ちしております。🙇🏻‍♂️ 良さげなの釣れた際は帰港後の検量などなど皆様のご協力よろしくお願いします！！😂",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261105/10/usuimaru-tatsu/1f/0a/j/o1080087815838596498.jpg",
+    "https://stat.ameba.jp/user_images/20261105/10/usuimaru-tatsu/a4/1b/j/o1080104515838596505.jpg"
+   ],
+   "imageCount": 2,
+   "cancelled": false
+  },
+  {
+   "id": "12983489813",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983489813.html",
+   "date": "2026-11-03",
+   "time": "17:16",
+   "title": "沖釣りフェスタ　day2",
+   "kind": "event",
+   "slot": "午前",
+   "plan": "ヒラメ",
+   "planEstimated": false,
+   "catches": [
+    {
+     "fish": "ヒラメ",
+     "min": 0,
+     "max": 2,
+     "minKg": 0.6,
+     "maxKg": 3.7
+    }
+   ],
+   "others": [
+    "ショゴ",
+    "ワカシ",
+    "イナダ"
+   ],
+   "note": "沖釣りフェスタ2日目で出船しました！朝から苦戦からの大ビラ最大3,7キロまじりで終盤にバタバタ釣れました🤩✨ 明日から6日までお休みでまた7日から出船予定です。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261103/17/usuimaru-tatsu/05/17/j/o0810108015838056052.jpg",
+    "https://stat.ameba.jp/user_images/20261103/17/usuimaru-tatsu/e0/b5/j/o0810108015838056059.jpg",
+    "https://stat.ameba.jp/user_images/20261103/17/usuimaru-tatsu/67/1a/j/o0810108015838056060.jpg",
+    "https://stat.ameba.jp/user_images/20261103/17/usuimaru-tatsu/f1/c9/j/o0810108015838056061.jpg"
+   ],
+   "imageCount": 20,
+   "cancelled": false
+  },
   {
    "id": "12983371734",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983371734.html",
