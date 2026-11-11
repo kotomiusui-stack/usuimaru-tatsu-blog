@@ -4,10 +4,149 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-05"
+  "2026-11-11"
  ],
- "updated": "2026-11-05",
+ "updated": "2026-11-11",
  "posts": [
+  {
+   "id": "12984202273",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984202273.html",
+   "date": "2026-11-11",
+   "time": "13:00",
+   "title": "７,６キロ",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ヒラメ",
+   "planEstimated": true,
+   "catches": [
+    {
+     "fish": "マダイ",
+     "min": null,
+     "max": null,
+     "minKg": null,
+     "maxKg": 7.6
+    }
+   ],
+   "others": [
+    "マハタ",
+    "カサゴ",
+    "キントキ"
+   ],
+   "note": "時化明けの今日も深場へ マハタ、カサゴ、キントキ、マダイでお魚っけはありました😍 が、ヒラメは不発でした。。 特大７,６キロでした！ 明日も明後日も出船予定です！ 土曜日は午前ヒラメ午後マダイで募集中。日曜日は午前まだ1名様です。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261111/13/usuimaru-tatsu/74/c0/j/o1080081015840511158.jpg",
+    "https://stat.ameba.jp/user_images/20261111/13/usuimaru-tatsu/78/a9/j/o1080067715840511159.jpg",
+    "https://stat.ameba.jp/user_images/20261111/13/usuimaru-tatsu/a5/35/j/o1006108015840511161.jpg"
+   ],
+   "imageCount": 3,
+   "cancelled": false
+  },
+  {
+   "id": "12983927376",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983927376.html",
+   "date": "2026-11-08",
+   "time": "12:25",
+   "title": "全員catch",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ヒラメ",
+   "planEstimated": false,
+   "catches": [],
+   "others": [
+    "マハタ",
+    "アオハタ",
+    "イナダ"
+   ],
+   "note": "午前ヒラメ 沖の50〜60mでマハタ、アオハタ、イナダで全員ハタcatchでお土産になりました🙇‍♂️✨ ヒラメは不発でした。。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261108/12/usuimaru-tatsu/af/ac/j/o0944108015839554640.jpg",
+    "https://stat.ameba.jp/user_images/20261108/12/usuimaru-tatsu/fd/69/j/o0840108015839554643.jpg",
+    "https://stat.ameba.jp/user_images/20261108/12/usuimaru-tatsu/3c/88/j/o0810108015839554645.jpg",
+    "https://stat.ameba.jp/user_images/20261108/12/usuimaru-tatsu/32/bd/j/o0908108015839554650.jpg"
+   ],
+   "imageCount": 10,
+   "cancelled": false
+  },
+  {
+   "id": "12983862931",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983862931.html",
+   "date": "2026-11-07",
+   "time": "17:56",
+   "title": "中ダイ連発！",
+   "kind": "catch",
+   "slot": "午後",
+   "plan": "マダイ",
+   "planEstimated": false,
+   "catches": [
+    {
+     "fish": "マダイ",
+     "min": 1,
+     "max": 10,
+     "minKg": 0.3,
+     "maxKg": 2.9
+    }
+   ],
+   "others": [
+    "マハタ",
+    "カサゴ",
+    "ヒラメ",
+    "ヒラマサ"
+   ],
+   "note": "午後マダイ バラシありながらも、良くアタリ2㌔前後の中ダイ８キャッチできました！🤩✨ エビとスイッチでした。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261107/17/usuimaru-tatsu/39/63/j/o0810108015839320566.jpg",
+    "https://stat.ameba.jp/user_images/20261107/17/usuimaru-tatsu/bd/bc/j/o0810108015839320567.jpg",
+    "https://stat.ameba.jp/user_images/20261107/17/usuimaru-tatsu/52/e6/j/o0908108015839320568.jpg",
+    "https://stat.ameba.jp/user_images/20261107/17/usuimaru-tatsu/46/5c/j/o0810108015839320569.jpg"
+   ],
+   "imageCount": 21,
+   "cancelled": false
+  },
+  {
+   "id": "12983853061",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983853061.html",
+   "date": "2026-11-07",
+   "time": "16:01",
+   "title": "午後マダイは好調に。。",
+   "kind": "catch",
+   "slot": "午後",
+   "plan": "マダイ",
+   "planEstimated": false,
+   "catches": [],
+   "others": [],
+   "note": "午後マダイは好調に。。（写真のみの速報）",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/d1/49/j/o0948108015839280287.jpg",
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/60/04/j/o0876108015839280288.jpg",
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/da/63/j/o0920108015839280291.jpg",
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/20/0d/j/o0810108015839280298.jpg"
+   ],
+   "imageCount": 7,
+   "cancelled": false
+  },
+  {
+   "id": "12983853010",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983853010.html",
+   "date": "2026-11-07",
+   "time": "12:00",
+   "title": "休み明け",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ヒラメ",
+   "planEstimated": false,
+   "catches": [],
+   "others": [
+    "タチウオ"
+   ],
+   "note": "沖からやったけど、タチウオのアタリばっかりでした。。🫠💦",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/aa/ed/j/o0810108015839279945.jpg",
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/4a/d7/j/o0810108015839280007.jpg",
+    "https://stat.ameba.jp/user_images/20261107/16/usuimaru-tatsu/24/de/j/o0810108015839280073.jpg"
+   ],
+   "imageCount": 3,
+   "cancelled": false
+  },
   {
    "id": "12983646323",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12983646323.html",
