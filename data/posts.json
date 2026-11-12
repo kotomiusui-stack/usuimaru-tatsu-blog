@@ -4,10 +4,51 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-11"
+  "2026-11-12"
  ],
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "posts": [
+  {
+   "id": "12984286825",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984286825.html",
+   "date": "2026-11-12",
+   "time": "12:20",
+   "title": "ハタもヒラメも",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [
+    {
+     "fish": "ヒラメ",
+     "min": 0,
+     "max": 2,
+     "minKg": 0.6,
+     "maxKg": 2.0
+    },
+    {
+     "fish": "マハタ",
+     "min": 0,
+     "max": 4,
+     "minKg": 0.5,
+     "maxKg": 3.2
+    }
+   ],
+   "others": [
+    "カサゴ",
+    "ワラサ",
+    "キントキ"
+   ],
+   "note": "ベタ凪で今日はヒラメもハタも釣れました😭✨ 道具ずっとやってた方は全員ハタかヒラメcatch！！🙆🏻‍♂️ どっちもサイズ良きでした！",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261112/12/usuimaru-tatsu/55/73/j/o0901108015840794273.jpg",
+    "https://stat.ameba.jp/user_images/20261112/12/usuimaru-tatsu/06/04/j/o0810108015840794274.jpg",
+    "https://stat.ameba.jp/user_images/20261112/12/usuimaru-tatsu/6d/c5/j/o0908108015840794279.jpg",
+    "https://stat.ameba.jp/user_images/20261112/12/usuimaru-tatsu/40/d5/j/o0915108015840794283.jpg"
+   ],
+   "imageCount": 15,
+   "cancelled": false
+  },
   {
    "id": "12984202273",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984202273.html",
