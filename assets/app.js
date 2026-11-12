@@ -222,10 +222,12 @@
   function renderCover() {
     const [s, e] = DATA.period.map(parts);
     document.getElementById("period").textContent = `${kn(s.m)}月〜${kn(e.m)}月の記録`;
-    const latest = DATA.posts.find((p) => p.kind === "notice");
+    // いちばん新しい記事を表示（出船案内なら「お知らせ」、釣果なら「最新の釣果」）
+    const latest = DATA.posts[0];
     if (latest) {
       const p = parts(latest.date);
-      document.getElementById("latest").innerHTML = `<span class="label">お知らせ</span><p>${esc(latest.note)}</p>
+      const label = latest.kind === "notice" ? "お知らせ" : "最新の釣果";
+      document.getElementById("latest").innerHTML = `<span class="label">${label}</span><p>${esc(latest.note)}</p>
         <p class="when">${p.m}月${p.d}日（${p.w}）の記事より　<a href="${esc(latest.url)}" target="_blank" rel="noopener">元の記事</a></p>`;
     }
     const u = parts(DATA.updated);
