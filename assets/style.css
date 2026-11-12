@@ -85,6 +85,12 @@ img { max-width: 100%; display: block; }
 .notice-box .label { font-family: var(--font-display); color: var(--shu); font-weight: 700; writing-mode: vertical-rl; letter-spacing: 0.2em; grid-row: span 2; }
 .notice-box p { margin: 0; }
 .notice-box .when { font-size: 13px; color: var(--sumi-2); }
+.notice-box.has-photo { grid-template-columns: auto minmax(0,1fr) 180px; }
+.notice-box .latest-photo { grid-column: 3; grid-row: 1 / span 2; }
+@media (max-width: 560px) {
+  .notice-box.has-photo { grid-template-columns: auto minmax(0,1fr); }
+  .notice-box .latest-photo { grid-column: 2; grid-row: auto; }
+}
 
 /* ---------- 見出し ---------- */
 .section { padding-block: 32px 8px; }

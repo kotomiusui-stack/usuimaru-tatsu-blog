@@ -227,8 +227,11 @@
     if (latest) {
       const p = parts(latest.date);
       const label = latest.kind === "notice" ? "お知らせ" : "最新の釣果";
-      document.getElementById("latest").innerHTML = `<span class="label">${label}</span><p>${esc(latest.note)}</p>
-        <p class="when">${p.m}月${p.d}日（${p.w}）の記事より　<a href="${esc(latest.url)}" target="_blank" rel="noopener">元の記事</a></p>`;
+      const img = latest.images && latest.images[0];
+      const box = document.getElementById("latest");
+      box.classList.toggle("has-photo", !!img);
+      box.innerHTML = `<span class="label">${label}</span><p>${esc(latest.note)}</p>
+        <p class="when">${p.m}月${p.d}日（${p.w}）の記事より　<a href="${esc(latest.url)}" target="_blank" rel="noopener">元の記事</a></p>${img ? `<div class="latest-photo">${photo(img, latest.title)}</div>` : ""}`;
     }
     const u = parts(DATA.updated);
     document.getElementById("updated").textContent = `${u.y}年${u.m}月${u.d}日`;
