@@ -4,10 +4,53 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-12"
+  "2026-11-13"
  ],
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "posts": [
+  {
+   "id": "12984374288",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984374288.html",
+   "date": "2026-11-13",
+   "time": "13:34",
+   "title": "今日もベタ凪で",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [
+    {
+     "fish": "ヒラメ",
+     "min": 0,
+     "max": 3,
+     "minKg": 0.6,
+     "maxKg": 1.8
+    },
+    {
+     "fish": "マハタ",
+     "min": 0,
+     "max": 4,
+     "minKg": null,
+     "maxKg": 2.9
+    }
+   ],
+   "others": [
+    "カサゴ",
+    "ヤガラ",
+    "アオハタ",
+    "イナダ",
+    "サンパク"
+   ],
+   "note": "今日もベタ凪で沖へ。。 お魚のアタリはポツリポツリと！ 明日も午前ヒラメ午後マダイで出船予定！ 日曜日はまだ少人数なので募集中です。",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261113/11/usuimaru-tatsu/eb/49/j/o0810108015841090139.jpg",
+    "https://stat.ameba.jp/user_images/20261113/11/usuimaru-tatsu/68/d8/j/o0810108015841090144.jpg",
+    "https://stat.ameba.jp/user_images/20261113/11/usuimaru-tatsu/d8/02/j/o0810108015841090145.jpg",
+    "https://stat.ameba.jp/user_images/20261113/11/usuimaru-tatsu/09/eb/j/o0810108015841090151.jpg"
+   ],
+   "imageCount": 10,
+   "cancelled": false
+  },
   {
    "id": "12984286825",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984286825.html",
