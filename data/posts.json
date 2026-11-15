@@ -4,10 +4,76 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-14"
+  "2026-11-15"
  ],
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "posts": [
+  {
+   "id": "12984553725",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984553725.html",
+   "date": "2026-11-15",
+   "time": "11:25",
+   "title": "全員catch",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [
+    {
+     "fish": "ヒラメ",
+     "min": 1,
+     "max": 3,
+     "minKg": 0.6,
+     "maxKg": 2.1
+    }
+   ],
+   "others": [
+    "マハタ"
+   ],
+   "note": "今日もベタ凪で✨少数精鋭で全員catchできました🙆🏻‍♂️❤️",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261115/11/usuimaru-tatsu/10/21/j/o0913108015841730741.jpg",
+    "https://stat.ameba.jp/user_images/20261115/11/usuimaru-tatsu/f2/10/j/o0863108015841730749.jpg",
+    "https://stat.ameba.jp/user_images/20261115/11/usuimaru-tatsu/25/4a/j/o0810108015841730767.jpg",
+    "https://stat.ameba.jp/user_images/20261115/11/usuimaru-tatsu/29/8b/j/o0810108015841730779.jpg"
+   ],
+   "imageCount": 4,
+   "cancelled": false
+  },
+  {
+   "id": "12984490188",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984490188.html",
+   "date": "2026-11-14",
+   "time": "17:42",
+   "title": "午後から近場で良く釣れて",
+   "kind": "catch",
+   "slot": "午後",
+   "plan": "マダイ",
+   "planEstimated": false,
+   "catches": [
+    {
+     "fish": "マダイ",
+     "min": 4,
+     "max": 12,
+     "minKg": 0.3,
+     "maxKg": 2.7
+    }
+   ],
+   "others": [
+    "ハナダイ",
+    "カサゴ",
+    "ベラ"
+   ],
+   "note": "港のすぐそばでアタリ多くポツポツ釣れて、中ダイもcatch！！🤩",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261114/17/usuimaru-tatsu/12/c7/j/o0930108015841498638.jpg",
+    "https://stat.ameba.jp/user_images/20261114/17/usuimaru-tatsu/b9/7e/j/o0810108015841498639.jpg",
+    "https://stat.ameba.jp/user_images/20261114/17/usuimaru-tatsu/1c/a4/j/o0939108015841498641.jpg",
+    "https://stat.ameba.jp/user_images/20261114/17/usuimaru-tatsu/7a/77/j/o0810108015841498642.jpg"
+   ],
+   "imageCount": 12,
+   "cancelled": false
+  },
   {
    "id": "12984460533",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984460533.html",
