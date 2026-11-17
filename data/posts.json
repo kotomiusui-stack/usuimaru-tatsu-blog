@@ -4,10 +4,46 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-15"
+  "2026-11-17"
  ],
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "posts": [
+  {
+   "id": "12984746919",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984746919.html",
+   "date": "2026-11-17",
+   "time": "11:59",
+   "title": "浅場でサイズ良き",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [
+    {
+     "fish": "ヒラメ",
+     "min": 0,
+     "max": 5,
+     "minKg": 0.5,
+     "maxKg": 3.1
+    }
+   ],
+   "others": [
+    "イナダ",
+    "サンパク",
+    "マハタ",
+    "サゴシ",
+    "ヒゲソリダイ"
+   ],
+   "note": "定休日明け、沖のポイント不発で灘の浅場でサイズ良く大ビラもcatch！！ イナダまじりアタリがありました✨",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261117/11/usuimaru-tatsu/21/f6/j/o0905108015842377319.jpg",
+    "https://stat.ameba.jp/user_images/20261117/11/usuimaru-tatsu/24/cf/j/o0810108015842377325.jpg",
+    "https://stat.ameba.jp/user_images/20261117/11/usuimaru-tatsu/ba/bf/j/o0810108015842377328.jpg",
+    "https://stat.ameba.jp/user_images/20261117/11/usuimaru-tatsu/a3/ac/j/o0810108015842377332.jpg"
+   ],
+   "imageCount": 14,
+   "cancelled": false
+  },
   {
    "id": "12984553725",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984553725.html",
