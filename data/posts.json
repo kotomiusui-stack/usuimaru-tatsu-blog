@@ -4,10 +4,61 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-17"
+  "2026-11-19"
  ],
- "updated": "2026-11-17",
+ "updated": "2026-11-19",
  "posts": [
+  {
+   "id": "12984971457",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984971457.html",
+   "date": "2026-11-19",
+   "time": "12:52",
+   "title": "ヒラメ",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [],
+   "others": [
+    "ヒラメ",
+    "マハタ",
+    "カサゴ",
+    "マダイ",
+    "ワカシ",
+    "イナダ"
+   ],
+   "note": "ヒラメは朝イチのだけで増えず。。マハタ、カサゴ、マダイ、ワカシ〜イナダは良くまじりお土産になりました🙂‍↕️",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261119/12/usuimaru-tatsu/78/05/j/o0878108015843116393.jpg",
+    "https://stat.ameba.jp/user_images/20261119/12/usuimaru-tatsu/00/3f/j/o0931108015843116396.jpg",
+    "https://stat.ameba.jp/user_images/20261119/12/usuimaru-tatsu/5e/3e/j/o0882108015843116397.jpg",
+    "https://stat.ameba.jp/user_images/20261119/12/usuimaru-tatsu/ba/3e/j/o1080081015843116399.jpg"
+   ],
+   "imageCount": 5,
+   "cancelled": false
+  },
+  {
+   "id": "12984938709",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984938709.html",
+   "date": "2026-11-19",
+   "time": "07:23",
+   "title": "おはようございます",
+   "kind": "catch",
+   "slot": "午前",
+   "plan": "ハタ・ヒラメ",
+   "planEstimated": true,
+   "catches": [],
+   "others": [
+    "ヒラメ"
+   ],
+   "note": "今日はナギて出れました！朝イチ入れパクで良いサイズcatch！！",
+   "images": [
+    "https://stat.ameba.jp/user_images/20261119/08/usuimaru-tatsu/cc/f5/j/o0878108015843011821.jpg",
+    "https://stat.ameba.jp/user_images/20261119/08/usuimaru-tatsu/8a/5a/j/o0931108015843011837.jpg"
+   ],
+   "imageCount": 2,
+   "cancelled": false
+  },
   {
    "id": "12984746919",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984746919.html",
