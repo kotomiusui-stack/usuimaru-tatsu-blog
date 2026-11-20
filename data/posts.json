@@ -4,10 +4,27 @@
  "source": "https://ameblo.jp/usuimaru-tatsu/",
  "period": [
   "2026-08-01",
-  "2026-11-19"
+  "2026-11-20"
  ],
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "posts": [
+  {
+   "id": "12985089249",
+   "url": "https://ameblo.jp/usuimaru-tatsu/entry-12985089249.html",
+   "date": "2026-11-20",
+   "time": "13:11",
+   "title": "三連休の予定",
+   "kind": "notice",
+   "slot": null,
+   "plan": null,
+   "planEstimated": false,
+   "catches": [],
+   "others": [],
+   "note": "明日、明後日と午前ヒラメと午後マダイで募集中！ 23日㈪は午前ヒラメで募集中！ よろしくお願いします！",
+   "images": [],
+   "imageCount": 0,
+   "cancelled": false
+  },
   {
    "id": "12984971457",
    "url": "https://ameblo.jp/usuimaru-tatsu/entry-12984971457.html",
